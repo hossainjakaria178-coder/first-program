@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    char name[50];
+    int marks;
+};
+
+int main() {
+    int n;
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+    struct Student *ptr = (struct Student*) malloc(n * sizeof(struct Student));
+    for (int i = 0; i < n; i++) {
+        printf("Enter Name and Marks: ");
+        scanf("%s %d", (ptr + i)->name, &(ptr + i)->marks);
+    }
+    for (int i = 0; i < n; i++) {
+        printf("Name: %s, Marks: %d\n", (ptr + i)->name, (ptr + i)->marks);
+    }
+    free(ptr);
+    return 0;
+}
