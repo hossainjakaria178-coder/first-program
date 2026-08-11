@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+typedef struct complex {
+    float real;
+    float imag;
+} complex;
+
+int main() {
+    complex c1, c2, temp;
+    printf("Enter real and imaginary for 1st: ");
+    scanf("%f %f", &c1.real, &c1.imag);
+    printf("Enter real and imaginary for 2nd: ");
+    scanf("%f %f", &c2.real, &c2.imag);
+    temp.real = c1.real + c2.real;
+    temp.imag = c1.imag + c2.imag;
+    printf("Sum = %.1f + %.1fi\n", temp.real, temp.imag);
+    return 0;
+}
