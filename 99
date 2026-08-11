@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char sentence[1000];
+    FILE *fptr = fopen("program.txt", "w");
+    if (fptr == NULL) return 1;
+    printf("Enter a sentence: ");
+    fgets(sentence, sizeof(sentence), stdin);
+    fprintf(fptr, "%s", sentence);
+    fclose(fptr);
+    printf("Saved to file successfully.\n");
+    return 0;
+}
