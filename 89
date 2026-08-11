@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[200], words[20][50];
+    int k = 0;
+    printf("Enter string: ");
+    fgets(str, sizeof(str), stdin);
+    char *token = strtok(str, " \n");
+    while (token != NULL) {
+        int exists = 0;
+        for (int i = 0; i < k; i++) {
+            if (strcmp(words[i], token) == 0) { exists = 1; break; }
+        }
+        if (!exists) strcpy(words[k++], token);
+        token = strtok(NULL, " \n");
+    }
+    for (int i = 0; i < k; i++) printf("%s ", words[i]);
+    printf("\n");
+    return 0;
+}
