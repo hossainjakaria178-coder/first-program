@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char c[1000];
+    FILE *fptr = fopen("program.txt", "r");
+    if (fptr == NULL) { printf("Error opening file!\n"); return 1; }
+    fscanf(fptr, "%[^\n]", c);
+    printf("Data from file:\n%s\n", c);
+    fclose(fptr);
+    return 0;
+}
