@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char a[100] = "Hello World", b[50] = " Beautiful", res[200];
+    int pos = 5;
+    strncpy(res, a, pos);
+    res[pos] = '\0';
+    strcat(res, b);
+    strcat(res, a + pos);
+    printf("Result: %s\n", res);
+    return 0;
+}
